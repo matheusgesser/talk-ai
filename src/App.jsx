@@ -40,6 +40,12 @@ export default function App() {
     }
   }, []);
 
+  const onDisconnect = useCallback(() => {
+    if (isConnected) {
+      socket.current?.close();
+    }
+  }, [isConnected]);
+
   return (
     <>
       <ChatClient
