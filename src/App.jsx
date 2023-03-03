@@ -111,6 +111,10 @@ export default function App() {
         isConnected={isConnected}
         members={members}
         chatRows={chatRows}
+        onPrivateMessage={onSendPrivateMessage}
+        sendMessage = {sendMessage}
+        onConnect={onConnect}
+        onDisconnect={onDisconnect}
       />
     </>
   )
