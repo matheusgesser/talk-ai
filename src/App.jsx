@@ -46,6 +46,40 @@ export default function App() {
     }
   }, [isConnected]);
 
+  const sendMessage = useCallback((event) => {
+    if (event.key == 'Enter' || event.type == 'click') {
+      let message;
+      if (event.type == 'keyup') {
+        message = event.target.value
+        event.target.value = '';
+      } else {
+        message = event.target.previousSibling.value
+        event.target.previousSibling.value = '';
+      }
+
+      const destination = event.target.parentElement.firstChild.textContent
+
+      switch (destination) {
+        case 'geral':
+          if (message !== null && message !== "") {
+            socket.current?.send(JSON.stringify({
+              action: 'sendPublic',
+              message,
+            }));
+          }
+          break
+        case 'chatgpt':
+          if (message !== null && message !== "") {
+            socket.current?.send(JSON.stringify({
+              action: 'sendBot',
+              message
+            }));
+          }
+          break
+      }
+    }
+  })
+
   return (
     <>
       <ChatClient
