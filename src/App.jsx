@@ -91,6 +91,20 @@ export default function App() {
     }
   }, []);
 
+  const onSocketMessage = useCallback((dataStr) => {
+    const data = JSON.parse(dataStr);
+    if (data.members) {
+      setMembers(data.members);
+    } else if (data.publicMessage) {
+      setChatRows(oldArray => [...oldArray, <span><b>{data.publicMessage}</b></span>]);
+    } else if (data.privateMessage) {
+      alert(data.privateMessage);
+    } else if (data.systemMessage) {
+      setChatRows(oldArray => [...oldArray, <span><i>{data.systemMessage}</i></span>]);
+    }
+    document.getElementById('messageAudio').play()    
+  }, []);
+
   return (
     <>
       <ChatClient
