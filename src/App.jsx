@@ -80,6 +80,17 @@ export default function App() {
     }
   })
 
+  const onSendPrivateMessage = useCallback((to) => {
+    const message = prompt(`Mensagem privada para ${to}`)?.trim();
+    if (message !== null && message !== "" && to !== name) {
+      socket.current?.send(JSON.stringify({
+        action: 'sendPrivate',
+        message,
+        to,
+      }));
+    }
+  }, []);
+
   return (
     <>
       <ChatClient
