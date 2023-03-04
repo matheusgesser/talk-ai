@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import UsersSection from './components/UsersSection'
+import ChatSection from './components/ChatSection'
 
 export const ChatClient = ({ isConnected, members, chatRows, onPrivateMessage, sendMessage, onConnect, onDisconnect }) => {
   const [ showAside, setShowAside ] = React.useState(false)
@@ -21,7 +22,16 @@ export const ChatClient = ({ isConnected, members, chatRows, onPrivateMessage, s
         closeAside={toggleAside}
         members={members}
         onPrivateMessage={onPrivateMessage}
-      />
+        />
+      <ChatSection
+        isConnected={isConnected}
+        chatRows={chatRows}
+        // onPublicMessage={onPublicMessage}
+        // onBotMessage={onBotMessage}
+        sendMessage = {sendMessage}
+        onConnect={onConnect}
+        onDisconnect={onDisconnect}
+        />
     </Container>
   )
 }
