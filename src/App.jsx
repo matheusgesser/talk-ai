@@ -4,7 +4,7 @@ import messageAudio from './styles/msg.wav'
 import { ChatClient } from './chat-client';
 
 // Websocket URL
-const URL = '';
+const URL = 'wss://m3gcx5rxz4.execute-api.sa-east-1.amazonaws.com/matheusgesser';
 
 export default function App() {
 
