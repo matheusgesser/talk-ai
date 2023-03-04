@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useRef } from 'react'
+import messageAudio from './styles/msg.wav'
 
 import { ChatClient } from './chat-client';
 
@@ -102,7 +103,8 @@ export default function App() {
     } else if (data.systemMessage) {
       setChatRows(oldArray => [...oldArray, <span><i>{data.systemMessage}</i></span>]);
     }
-    document.getElementById('messageAudio').play()    
+    // ? New message sound effect
+    document.getElementById('messageAudio').play()
   }, []);
 
   return (
@@ -116,6 +118,7 @@ export default function App() {
         onConnect={onConnect}
         onDisconnect={onDisconnect}
       />
+      <audio id='messageAudio' src={messageAudio}></audio>
     </>
   )
 }
