@@ -10,7 +10,7 @@
 
 > Sala de chat, integrada com o **ChatGPT**.
 
-**Acesse: <a href="https://gesserchatroom.netlify.app/">https://gesserchatroom.netlify.app/</a>**
+**Acesse: <a href="https://gesserchatroom.netlify.app/">gesserchatroom.netlify.app</a>**
 
 ## 💻 **Tecnologias**
 
