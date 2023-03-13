@@ -5,10 +5,11 @@ Title: Robot Playground
 
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import RobotModel from '../../../public/robot-transformed.glb'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./public/robot-transformed.glb')
+  const { nodes, materials, animations } = useGLTF(RobotModel)
   const { actions, names } = useAnimations(animations, group)
 
   useEffect(() => {
