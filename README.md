@@ -6,6 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/matheusgesser/talk-ai?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/matheusgesser/talk-ai?style=for-the-badge)
 
+<img src="https://i.imgur.com/t7AOVdb.png" alt="Imagem demonstrativa">
 <img src="https://i.imgur.com/8X66kCO.png" alt="Imagem demonstrativa">
 
 > Sala de chat, integrada com o **ChatGPT**.
