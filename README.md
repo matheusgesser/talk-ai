@@ -1,12 +1,12 @@
-# Chat Room 💬
+# Talk AI 💬
 
-![GitHub repo size](https://img.shields.io/github/repo-size/matheusgesser/chat-room?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/matheusgesser/chat-room?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/matheusgesser/chat-room?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/matheusgesser/chat-room?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/matheusgesser/chat-room?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/matheusgesser/talk-ai?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/matheusgesser/talk-ai?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/matheusgesser/talk-ai?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/matheusgesser/talk-ai?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/matheusgesser/talk-ai?style=for-the-badge)
 
-<img src="https://i.imgur.com/4LjdoLX.jpg" alt="Imagem demonstrativa Desktop">
+<img src="https://i.imgur.com/8X66kCO.png" alt="Imagem demonstrativa">
 
 > Sala de chat, integrada com o **ChatGPT**.
 
