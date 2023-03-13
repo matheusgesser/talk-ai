@@ -5,10 +5,11 @@ export const Aside = styled.aside`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  /* border-right: 1px solid #fff; */
   border-radius: 16px 0 0 16px;
-  width: 20%;
+  width: 25%;
   height: 100%;
-  background: #222;
+  backdrop-filter: blur(3px);
   color: #fff;
   padding: 1rem;
   overflow-x: hidden;
@@ -28,7 +29,8 @@ export const Header = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background: #333;
+  background: #ffffff08;
+  backdrop-filter: blur(10px);
   padding: 2rem 0;
   border-radius: 50px;
 `
@@ -36,7 +38,7 @@ export const Header = styled.section`
 export const Title = styled.h2`
   font-family: 'Roboto Mono', monospace;
   font-size: .8vw;
-  opacity: .7;
+  opacity: 0.9;
   margin-top: 0.5rem;
   text-align: center;
   & a {
@@ -50,7 +52,7 @@ export const Title = styled.h2`
 
 export const SubTitle = styled.h4`
   font-family: 'Roboto Mono', monospace;
-  font-size: 0.8vw;
+  font-size: .7vw;
   opacity: 0.5;
   text-align: center;
   margin-top: 1.5rem;
@@ -75,7 +77,7 @@ export const ListItem = styled.li`
 
 export const ListItemText = styled.strong`
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.4vw;
+  font-size: 1.7vw;
   word-wrap: break-word;
   text-align: center;
   padding: 0.25rem 0;

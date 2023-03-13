@@ -22,26 +22,28 @@ export const MessagesFeed = styled.section`
     width: 16px;
   }
   &::-webkit-scrollbar-track {
-    background: #888888;
+    background: none;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #222222;
+    background-color: #fff;
     border-radius: 16px;
-    border: 2px solid #888888;
   }
   margin-bottom: 0.5rem;
 `
 
 export const Message = styled.article`
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
+  margin-right: 1rem;
 `
 
 export const MessageText = styled.p`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #fff;
   padding: 1rem;
-  background: #222;
-  border-radius: 10px 10px 10px 2px;
+  border: 1px solid #fff;
+  border-radius: 20px 20px 20px 0px;
   font-family: 'Orienta', sans-serif;
   font-size: 1.5rem;
   word-break: normal;
@@ -56,10 +58,13 @@ export const Input = styled.input`
   width: 100%;
   font-size: 1.5rem;
   padding: 0 0.5rem;
+  background: none;
   border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: #fff;
   &:active,
   &:focus {
-    border: none;
     outline: none;
   }
   @media (max-width:800px) {
@@ -80,22 +85,20 @@ export const Buttons = styled.section`
 
 export const Button = styled.button`
   text-transform: uppercase;
-  padding: 1rem 2.2rem;
-  border: none;
+  padding: 1.1rem 2rem;
+  border: 1px solid #fff;
   border-radius: 4px;
   cursor: pointer;
-  background: #000;
-  box-shadow: #555 0 6px 0px;
+  background: none;
   color: #fff;
   font-size: 0.8rem;
   font-family: 'Roboto Mono', monospace;
-  transition: all 50ms;
+  transition: all 300ms;
   @media (max-width:800px) {
     width: 100%;
     margin: 0;
   }
-  &:active {
-    transform: translateY(4px);
-    box-shadow: none;
+  &:hover {
+    background: #ffffff50;
   }
 `
