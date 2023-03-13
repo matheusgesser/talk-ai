@@ -11,7 +11,7 @@
 
 > Sala de chat, integrada com o **ChatGPT**.
 
-**Acesse: <a href="https://gesserchatroom.netlify.app/">gesserchatroom.netlify.app</a>**
+**Acesse: <a href="https://talkai.netlify.app/">talkai.netlify.app</a>**
 
 ## 💻 **Tecnologias**
 
