@@ -97,6 +97,12 @@ export default function App() {
     if (data.members) {
       setMembers(data.members);
     } else if (data.publicMessage) {
+      console.log(typeof data.publicMessage)
+      if (data.publicMessage.includes('gptidentifier#')) {
+        data.publicMessage = data.publicMessage.split('#')[1]
+        setChatRows(oldArray => [...oldArray, <><img src={LogoChatGPT} width={'25px'} /><span><b>{data.publicMessage}</b></span></>]);
+        return
+      }
       setChatRows(oldArray => [...oldArray, <span><b>{data.publicMessage}</b></span>]);
     } else if (data.privateMessage) {
       alert(data.privateMessage);
