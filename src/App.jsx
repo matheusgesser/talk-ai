@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useRef } from 'react'
-import messageAudio from './styles/msg.wav'
-
-import { ChatClient } from './chat-client';
+import messageAudio from './assets/msg.wav'
+import LogoChatGPT from './assets/chatgpt.svg'
+import { ChatClient } from './pages/chat-client';
+import Home from './pages/home';
 
 // Websocket URL
 const URL = 'wss://m3gcx5rxz4.execute-api.sa-east-1.amazonaws.com/matheusgesser';
@@ -12,11 +13,10 @@ export default function App() {
   const [isConnected, setIsConnected] = useState(false);
   const [members, setMembers] = useState([]);
   const [chatRows, setChatRows] = useState([]);
-  let name;
 
-  const onSocketOpen = useCallback(() => {
-    name = prompt('Informe o seu nome')?.trim();
-    if (name != null && name != "" && name != undefined) {
+  const onSocketOpen = useCallback((name) => {
+    setName(name)
+    if (name) {
       socket.current?.send(JSON.stringify({ action: 'setName', name }));
       setIsConnected(true);
       return
@@ -30,12 +30,12 @@ export default function App() {
     setChatRows([]);
   }, []);
 
-  const onConnect = useCallback(() => {
+  const onConnect = useCallback((name) => {
     if (socket.current?.readyState !== WebSocket.OPEN) {
       socket.current = new WebSocket(URL);
-      socket.current.addEventListener('open', onSocketOpen);
+      socket.current.addEventListener('open', () => onSocketOpen(name));
       socket.current.addEventListener('close', onSocketClose);
-      socket.current.addEventListener('message', (event) => {
+      socket.current.addEventListener('message', event => {
         onSocketMessage(event.data);
       });
     }
@@ -51,10 +51,10 @@ export default function App() {
     if (event.key == 'Enter' || event.type == 'click') {
       let message;
       if (event.type == 'keyup') {
-        message = event.target.value
+        message = event.target.value.trim()
         event.target.value = '';
       } else {
-        message = event.target.previousSibling.value
+        message = event.target.previousSibling.value.trim()
         event.target.previousSibling.value = '';
       }
 
@@ -62,7 +62,7 @@ export default function App() {
 
       switch (destination) {
         case 'geral':
-          if (message !== null && message !== "") {
+          if (message) {
             socket.current?.send(JSON.stringify({
               action: 'sendPublic',
               message,
@@ -70,7 +70,7 @@ export default function App() {
           }
           break
         case 'chatgpt':
-          if (message !== null && message !== "") {
+          if (message) {
             socket.current?.send(JSON.stringify({
               action: 'sendBot',
               message
@@ -83,7 +83,7 @@ export default function App() {
 
   const onSendPrivateMessage = useCallback((to) => {
     const message = prompt(`Mensagem privada para ${to}`)?.trim();
-    if (message !== null && message !== "" && to !== name) {
+    if (message) {
       socket.current?.send(JSON.stringify({
         action: 'sendPrivate',
         message,
@@ -109,16 +109,27 @@ export default function App() {
 
   return (
     <>
-      <ChatClient
-        isConnected={isConnected}
-        members={members}
-        chatRows={chatRows}
-        onPrivateMessage={onSendPrivateMessage}
-        sendMessage={sendMessage}
-        onConnect={onConnect}
-        onDisconnect={onDisconnect}
-      />
-      <audio id='messageAudio' src={messageAudio}></audio>
+      {isConnected
+        ? (
+          <>
+            <ChatClient
+              isConnected={isConnected}
+              members={members}
+              chatRows={chatRows}
+              onPrivateMessage={onSendPrivateMessage}
+              sendMessage={sendMessage}
+              onConnect={onConnect}
+              onDisconnect={onDisconnect}
+            />
+            <audio id='messageAudio' src={messageAudio}></audio>
+          </>
+        )
+        : (
+          <Home
+            onConnect={onConnect} />
+        )
+      }
+
     </>
   )
 }
