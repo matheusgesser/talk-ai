@@ -15,7 +15,6 @@ export default function App() {
   const [chatRows, setChatRows] = useState([]);
 
   const onSocketOpen = useCallback((name) => {
-    setName(name)
     if (name) {
       socket.current?.send(JSON.stringify({ action: 'setName', name }));
       setIsConnected(true);
