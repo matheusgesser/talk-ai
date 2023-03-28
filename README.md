@@ -11,7 +11,9 @@
 
 > A online room where you can chat with your friends and/or **ChatGPT**
 
-**Try it: <a href="https://talkai.netlify.app/">talkai.netlify.app</a>**
+## 🔴 **Live Version**
+
+**<a href="https://talkai.netlify.app/">talkai.netlify.app</a>**
 
 ## 💻 **Technologies**
 
