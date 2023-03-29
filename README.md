@@ -28,4 +28,4 @@
 
 - Send global message
 - Send ChatGPT message
-- Send private message to an user
+- Send private message to a user
