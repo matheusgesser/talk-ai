@@ -31,3 +31,9 @@
 - Send global message
 - Send ChatGPT message
 - Send private message to a user
+
+## ⚡ **How to run**
+
+```bash
+npm run dev
+```
